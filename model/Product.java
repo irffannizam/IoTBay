@@ -1,14 +1,14 @@
 package model;
 
 public class Product {
+    //member attributes
     private String productID;
     private String productName;
     private String description;
     private String status;
     private int quantity;
 
-    public Product() {}
-
+    //constructor
     public Product(String productName, String description, String status, int quantity) {
         this.productName = productName;
         this.description = description;
@@ -16,6 +16,7 @@ public class Product {
         this.quantity = quantity;
     }
 
+    //accessors and mutators
     public String getProductID() {
         return productID;
     }
