@@ -1,23 +1,22 @@
 package model;
 
-public class Employee {
-    
+public class Order {
     //member attributes
     private static int idCounter = 0;
-    private int employeeID;
-    private String employeeName;
-    private String employeeRole;
-    private String phoneNumber;
-    private String email;
+    private int orderID;
+    private String orderDesc;
+    private String orderStatus;
+    private String paymentID;
+    private String shippingDetails;
 
     //constructor
-    public Employee(String employeeName, String employeeRole, String phoneNumber, String email) {
+    public Order(String orderDesc, String orderStatus, String paymentID, String shippingDetails) {
         //this ensures each instantiate of object runs generateID method
-        this.employeeID = generateID();
-        this.employeeName = employeeName;
-        this.employeeRole = employeeRole;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.orderID = generateID();
+        this.orderDesc = orderDesc;
+        this.orderStatus = orderStatus;
+        this.paymentID = paymentID;
+        this.shippingDetails = shippingDetails;
     }
 
     //method to assign 6 digit ID value to each object
@@ -31,43 +30,43 @@ public class Employee {
     }
 
     //accessors and mutators
-    public int getEmployeeID() {
-        return employeeID;
+    public int getOrderID() {
+        return orderID;
     }
 
-    public void setEmployeeID(int employeeID) {
-        this.employeeID = employeeID;
+    public void setOrderID(int orderID) {
+        this.orderID = orderID;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getOrderDesc() {
+        return orderDesc;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setOrderDesc(String orderDesc) {
+        this.orderDesc = orderDesc;
     }
 
-    public String getEmployeeRole() {
-        return employeeRole;
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setEmployeeRole(String employeeRole) {
-        this.employeeRole = employeeRole;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPaymentID() {
+        return paymentID;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPaymentID(String paymentID) {
+        this.paymentID = paymentID;
     }
 
-    public String getEmail() {
-        return email;
+    public String getShippingDetails() {
+        return shippingDetails;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setShippingDetails(String shippingDetails) {
+        this.shippingDetails = shippingDetails;
     }
 }
