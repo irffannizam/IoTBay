@@ -2,7 +2,8 @@ package model;
 
 public class Supplier {
     //member attributes
-    private String supplierID;
+    private static int idCounter = 0;
+    private int supplierID;
     private String supplierName;
     private String address;
     private String phoneNumber;
@@ -11,6 +12,8 @@ public class Supplier {
 
     //constructor
     public Supplier(String supplierName, String address, String phoneNumber, String email, String status) {
+        //this ensures each instantiate of object runs generateID method
+        this.supplierID = generateID();
         this.supplierName = supplierName;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -18,12 +21,22 @@ public class Supplier {
         this.status = status;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getSupplierID() {
+    public int getSupplierID() {
         return supplierID;
     }
 
-    public void setSupplierID(String supplierID) {
+    public void setSupplierID(int supplierID) {
         this.supplierID = supplierID;
     }
 

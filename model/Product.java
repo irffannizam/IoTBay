@@ -2,7 +2,8 @@ package model;
 
 public class Product {
     //member attributes
-    private String productID;
+    private static int idCounter = 0;
+    private int productID;
     private String productName;
     private String description;
     private String status;
@@ -10,18 +11,30 @@ public class Product {
 
     //constructor
     public Product(String productName, String description, String status, int quantity) {
+        //this ensures each instantiate of object runs generateID method
+        this.productID = generateID();
         this.productName = productName;
         this.description = description;
         this.status = status;
         this.quantity = quantity;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getProductID() {
+    public int getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(int productID) {
         this.productID = productID;
     }
 

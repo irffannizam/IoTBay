@@ -3,24 +3,37 @@ package model;
 public class Admin {
 
     //member attributes
-    private String adminID;
+    private static int idCounter = 0;
+    private int adminID;
     private String adminName;
     private String phoneNumber;
     private String email;
 
     //constructor
     public Admin(String adminName, String phoneNumber, String email) {
+        //this ensures each instantiate of object runs generateID method
+        this.adminID = generateID();
         this.adminName = adminName;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getAdminID() {
+    public int getAdminID() {
         return adminID;
     }
 
-    public void setAdminID(String adminID) {
+    public void setAdminID(int adminID) {
         this.adminID = adminID;
     }
 
@@ -47,4 +60,5 @@ public class Admin {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

@@ -2,7 +2,8 @@ package model;
 
 public class Payment {
     //member attributes
-    private String paymentID;
+    private static int idCounter = 0;
+    private int paymentID;
     private double amount;
     private String paymentDate;
     private String paymentType;
@@ -14,12 +15,22 @@ public class Payment {
         this.paymentType = paymentType;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getPaymentID() {
+    public int getPaymentID() {
         return paymentID;
     }
 
-    public void setPaymentID(String paymentID) {
+    public void setPaymentID(int paymentID) {
         this.paymentID = paymentID;
     }
 

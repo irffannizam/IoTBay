@@ -3,7 +3,8 @@ package model;
 public class Employee {
     
     //member attributes
-    private String employeeID;
+    private static int idCounter = 0;
+    private int employeeID;
     private String employeeName;
     private String employeeRole;
     private String phoneNumber;
@@ -11,18 +12,30 @@ public class Employee {
 
     //constructor
     public Employee(String employeeName, String employeeRole, String phoneNumber, String email) {
+        //this ensures each instantiate of object runs generateID method
+        this.employeeID = generateID();
         this.employeeName = employeeName;
         this.employeeRole = employeeRole;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getEmployeeID() {
+    public int getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(String employeeID) {
+    public void setEmployeeID(int employeeID) {
         this.employeeID = employeeID;
     }
 

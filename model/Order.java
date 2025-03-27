@@ -1,8 +1,9 @@
 package model;
 
 public class Order {
-//member attributes
-    private String orderID;
+    //member attributes
+    private static int idCounter = 0;
+    private int orderID;
     private String orderDesc;
     private String orderStatus;
     private String paymentID;
@@ -10,18 +11,30 @@ public class Order {
 
     //constructor
     public Order(String orderDesc, String orderStatus, String paymentID, String shippingDetails) {
+        //this ensures each instantiate of object runs generateID method
+        this.orderID = generateID();
         this.orderDesc = orderDesc;
         this.orderStatus = orderStatus;
         this.paymentID = paymentID;
         this.shippingDetails = shippingDetails;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
+
     //accessors and mutators
-    public String getOrderID() {
+    public int getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(String orderID) {
+    public void setOrderID(int orderID) {
         this.orderID = orderID;
     }
 

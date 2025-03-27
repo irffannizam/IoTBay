@@ -3,6 +3,7 @@ package model;
 public class Customer {
     
     //member attributes
+    private static int idCounter = 0;
     private int customerID;
     private String customerName;
     private String dateOfBirth;
@@ -14,6 +15,8 @@ public class Customer {
 
     //constructor
     public Customer(String customerName, String dateOfBirth, String phoneNumber, String userID, String address, String password) {
+        //this ensures each instantiate of object runs generateID method
+        this.customerID = generateID();
         this.customerName = customerName;
         this.dateOfBirth = dateOfBirth;
         this.phoneNumber = phoneNumber;
@@ -22,6 +25,15 @@ public class Customer {
         this.password = password;
     }
 
+    //method to assign 6 digit ID value to each object
+    private int generateID(){
+        int cur = idCounter++;
+        String str = Integer.toString(cur);
+        while(str.length() < 6){
+            str = "0" + str;
+        }
+        return 0;
+    }
 
     //accessors and mutators
     public int getCustomerID() {
