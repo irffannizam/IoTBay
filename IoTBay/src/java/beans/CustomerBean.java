@@ -1,6 +1,6 @@
-package model;
+package beans;
 
-public class Customer {
+public class CustomerBean {
     
     //member attributes
     private static int idCounter = 0;
@@ -14,7 +14,7 @@ public class Customer {
     private String password;
 
     //constructor
-    public Customer(String customerName, String dateOfBirth, String phoneNumber, String userID, String address, String password) {
+    public CustomerBean(String customerName, String dateOfBirth, String phoneNumber, String userID, String address, String password) {
         //this ensures each instantiate of object runs generateID method
         this.customerID = generateID();
         this.customerName = customerName;

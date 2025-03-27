@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - IoTBay</title>
     <!-- can connect css files later on -->
@@ -26,7 +25,7 @@
         </form>
     </main>
     <footer>
-        <p>&copy; 2025 IoTBay. All rights reserved.</p>
+        <p>&copy; 2025 IoTBay Assignment1. All rights reserved.</p>
     </footer>
 </body>
 </html>

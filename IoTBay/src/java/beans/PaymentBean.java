@@ -1,6 +1,6 @@
-package model;
+package beans;
 
-public class Payment {
+public class PaymentBean {
     //member attributes
     private static int idCounter = 0;
     private int paymentID;
@@ -9,7 +9,7 @@ public class Payment {
     private String paymentType;
 
     //constructor   
-    public Payment(double amount, String paymentDate, String paymentType) {
+    public PaymentBean(double amount, String paymentDate, String paymentType) {
         //this ensures each instantiate of object runs generateID method
         this.paymentID = generateID();
         this.amount = amount;

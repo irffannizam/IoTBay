@@ -1,6 +1,6 @@
-package model;
+package beans;
 
-public class Order {
+public class OrderBean {
     //member attributes
     private static int idCounter = 0;
     private int orderID;
@@ -10,7 +10,7 @@ public class Order {
     private String shippingDetails;
 
     //constructor
-    public Order(String orderDesc, String orderStatus, String paymentID, String shippingDetails) {
+    public OrderBean(String orderDesc, String orderStatus, String paymentID, String shippingDetails) {
         //this ensures each instantiate of object runs generateID method
         this.orderID = generateID();
         this.orderDesc = orderDesc;

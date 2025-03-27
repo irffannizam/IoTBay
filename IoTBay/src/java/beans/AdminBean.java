@@ -1,6 +1,6 @@
-package model;
+package beans;
 
-public class Admin {
+public class AdminBean {
 
     //member attributes
     private static int idCounter = 0;
@@ -10,7 +10,7 @@ public class Admin {
     private String email;
 
     //constructor
-    public Admin(String adminName, String phoneNumber, String email) {
+    public AdminBean(String adminName, String phoneNumber, String email) {
         //this ensures each instantiate of object runs generateID method
         this.adminID = generateID();
         this.adminName = adminName;

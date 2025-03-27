@@ -1,6 +1,6 @@
-package model;
+package beans;
 
-public class Product {
+public class ProductBean {
     //member attributes
     private static int idCounter = 0;
     private int productID;
@@ -10,7 +10,7 @@ public class Product {
     private int quantity;
 
     //constructor
-    public Product(String productName, String description, String status, int quantity) {
+    public ProductBean(String productName, String description, String status, int quantity) {
         //this ensures each instantiate of object runs generateID method
         this.productID = generateID();
         this.productName = productName;
