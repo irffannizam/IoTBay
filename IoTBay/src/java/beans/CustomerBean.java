@@ -12,9 +12,10 @@ public class CustomerBean {
     private String address;
     private int orderID;
     private String password;
+    private String email;
 
     //constructor
-    public CustomerBean(String customerName, String dateOfBirth, String phoneNumber, String userID, String address, String password) {
+    public CustomerBean(String customerName, String dateOfBirth, String phoneNumber, String userID, String address, String email, String password) {
         //this ensures each instantiate of object runs generateID method
         this.customerID = generateID();
         this.customerName = customerName;
@@ -23,6 +24,7 @@ public class CustomerBean {
         this.userID = userID;
         this.address = address;
         this.password = password;
+        this.email = email;
     }
 
     //method to assign 6 digit ID value to each object

@@ -12,8 +12,8 @@
     <main>
         <form action="LoginServlet" method="post">
             <div>
-                <label for="email">ID:</label>
-                <input type="text" id="email" name="email" required />
+                <label for="id">ID:</label>
+                <input type="text" id="userid" name="id" required />
             </div>
             <div>
                 <label for="password">Password:</label>
